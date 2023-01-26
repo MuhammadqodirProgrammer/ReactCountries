@@ -1,0 +1,28 @@
+.header{
+    /* background-color: orangered; */
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.mode{
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+    color: grey;
+}
+.mode-img{
+    width: 30px;
+    height: 30px;
+}
+
+.dark_mode{
+    background-color: black;
+    color: white;
+    
+}
