@@ -1,5 +1,5 @@
 // import axios from "axios";
-import {  useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 export const Card = ({ obj }) => {
@@ -25,13 +25,11 @@ export const Card = ({ obj }) => {
           <p className="card-text">Region:{obj.region} </p>
           <p className="card-text">Capital:{obj?.capital} </p>
           {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-          <Link to={"name/" + obj?.name?.common} >
-
+          <Link to={"name/" + obj?.name?.common}>
             <button
               className="btn btn-primary"
               data-country-name={obj.name.common}
               ref={btnRef}
-              
             >
               More
             </button>

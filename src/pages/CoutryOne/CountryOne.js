@@ -61,7 +61,26 @@ export const CountryOne = () => {
         {country.data.length ? (
           <ul className="row gy-4 justify-content-center list-unstyled mt-4">
             {country.data.map((item) => (
-              <Card key={item.name.common} obj={item} />
+                <li className="col-md-3 col-sm-4 col-10">
+      <div className="d-flex gap-2">
+        <img
+          src={item.flags?.png}
+          width="100%"
+          height="250px"
+          className="card-img-top"
+          alt="img"
+        />
+        <div className="card-body">
+          <h5 className="card-title" >
+            {item.name.common}
+          </h5>
+          <p className="card-text">Population:{item.population} </p>
+          <p className="card-text">Region:{item.region} </p>
+          <p className="card-text">Capital:{item?.capital} </p>
+      
+        </div>
+      </div>
+    </li>
             ))}{" "}
           </ul>
         ) : (
