@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import {Card} from "../Card/Card";
 import { Loading } from "../Loading/Loading";
