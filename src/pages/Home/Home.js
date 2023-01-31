@@ -1,107 +1,84 @@
-// import { useEffect, useRef, useState } from "react";
-// import Card from "../Card/Card";
-// import { Loading } from "../Loading/Loading";
-
-// export const Countryes = ()=>{
-//     const SelectVal = useRef();
-//     const elChangeInput = useRef();
-  
-//     let [country, setCountry] = useState({
-//       isLoading: false,
-//       data: [],
-//       isError: "",
-//     });
-  
-//     useEffect(() => {
-//       setCountry({
-//         ...country,
-//         isLoading: true,
-//       });
-//       fetch("https://restcountries.com/v3.1/all")
-//         .then((res) => res.json())
-//         .then((data) => {
-//           if (data) {
-//             setCountry({
-//               ...country,
-//               isLoading: false,
-//               data: data,
-//             });
-//           }
-//         })
-//         .catch((err) => {
-//           if (err) {
-//             setCountry({
-//               ...country,
-//               isLoading: false,
-//               data: [],
-//               isError: err.massage,
-//             });
-//           }
-//         });
-//     }, []);
-    
-//     // https://restcountries.com/v3.1/name/{name}
-    
-//     const handleSelect = () => {
-//       fetch("https://restcountries.com/v3.1/region/" + SelectVal.current.value)
-//         .then((res) => res.json())
-//         .then((data) => {
-//           if (data) {
-//             setCountry({
-//               isLoading: false,
-//               data: data,
-//               isError: "",
-//             });
-//           }
-//         })
-//         .catch((err) => console.log(err));
-//     };
-//     const handleChange = () => {
-//       console.log("Change");
-//       fetch("https://restcountries.com/v3.1/name/" + elChangeInput.current.value)
-//         .then((res) => res.json())
-//         .then((data) => {
-//           if (data.length > 0) {
-//             setCountry({
-//               isLoading: false,
-//               data: data,
-//               isError: "",
-//             });
-//           }
-//         })
-//         .catch((err) => console.log(err));
-//     };
-//     return (
-//         <>
-// <div className="container">
-// <form className="form  gx-4">
-//         <input className="form-control"
-//           type="Search"
-//           placeholder="Search.."
-//           onChange={handleChange}
-//           ref={elChangeInput}
-//         ></input>
-//         <select onChange={handleSelect} ref={SelectVal} className="form-select">
-//           <option disabled>Filter by Region</option>
-//           <option value="Africa">Africa</option>
-//           <option value="America">America</option>
-//           <option value="Asia">Asia</option>
-//           <option value="Europe">Europe</option>
-//           <option value="Oceania">Oceania</option>
-//         </select>
-//       </form>
-//       {country.isLoading ? (<Loading />) : ""}
-//       {country.isError ? <h1>{country.isError} </h1> : ""}
-//       {country.data.length ? (
-//         <ul className="row gy-4 justify-content-center list-unstyled mt-4">
-//           {country.data.map((item) => (
-//             <Card key={item.name.common} obj={item} />
-//           ))}{" "}
-//         </ul>
-//       ) : (
-//         ""
-//       )}
-// </div>
-//         </>
-//     )
-// }
+// [
+//   {
+//     name: {
+//       common: "Peru",
+//       official: "Republic of Peru",
+//       nativeName: {
+//         aym: { official: "Piruw Suyu", common: "Piruw" },
+//         que: { official: "Piruw Ripuwlika", common: "Piruw" },
+//         spa: { official: "República del Perú", common: "Perú" },
+//       },
+//     },
+//     tld: [".pe"],
+//     cca2: "PE",
+//     ccn3: "604",
+//     cca3: "PER",
+//     cioc: "PER",
+//     independent: true,
+//     status: "officially-assigned",
+//     unMember: true,
+//     currencies: { PEN: { name: "Peruvian sol", symbol: "S/ " } },
+//     idd: { root: "+5", suffixes: ["1"] },
+//     capital: ["Lima"],
+//     altSpellings: ["PE", "Republic of Peru", "República del Perú"],
+//     region: "Americas",
+//     subregion: "South America",
+//     languages: { aym: "Aymara", que: "Quechua", spa: "Spanish" },
+//     translations: {
+//       ara: { official: "جمهورية بيرو", common: "بيرو" },
+//       bre: { official: "Republik Perou", common: "Perou" },
+//       ces: { official: "Peruánská republika", common: "Peru" },
+//       cym: { official: "Republic of Peru", common: "Peru" },
+//       deu: { official: "Republik Peru", common: "Peru" },
+//       est: { official: "Peruu Vabariik", common: "Peruu" },
+//       fin: { official: "Perun tasavalta", common: "Peru" },
+//       fra: { official: "République du Pérou", common: "Pérou" },
+//       hrv: { official: "Republika Peru", common: "Peru" },
+//       hun: { official: "Perui Köztársaság", common: "Peru" },
+//       ita: { official: "Repubblica del Perù", common: "Perù" },
+//       jpn: { official: "ペルー共和国", common: "ペルー" },
+//       kor: { official: "페루 공화국", common: "페루" },
+//       nld: { official: "Republiek Peru", common: "Peru" },
+//       per: { official: "جمهوری پرو", common: "پرو" },
+//       pol: { official: "Republika Peru", common: "Peru" },
+//       por: { official: "República do Peru", common: "Perú" },
+//       rus: { official: "Республика Перу", common: "Перу" },
+//       slk: { official: "Peruánska republika", common: "Peru" },
+//       spa: { official: "República de Perú", common: "Perú" },
+//       swe: { official: "Republiken Peru", common: "Peru" },
+//       tur: { official: "Peru Cumhuriyeti", common: "Peru" },
+//       urd: { official: "جمہوریہ پیرو", common: "پیرو" },
+//       zho: { official: "秘鲁共和国", common: "秘鲁" },
+//     },
+//     latlng: [-10.0, -76.0],
+//     landlocked: false,
+//     borders: ["BOL", "BRA", "CHL", "COL", "ECU"],
+//     area: 1285216.0,
+//     demonyms: {
+//       eng: { f: "Peruvian", m: "Peruvian" },
+//       fra: { f: "Péruvienne", m: "Péruvien" },
+//     },
+//     flag: "\uD83C\uDDF5\uD83C\uDDEA",
+//     maps: {
+//       googleMaps: "https://goo.gl/maps/uDWEUaXNcZTng1fP6",
+//       openStreetMaps: "https://www.openstreetmap.org/relation/288247",
+//     },
+//     population: 32971846,
+//     gini: { 2019: 41.5 },
+//     fifa: "PER",
+//     car: { signs: ["PE"], side: "right" },
+//     timezones: ["UTC-05:00"],
+//     continents: ["South America"],
+//     flags: {
+//       png: "https://flagcdn.com/w320/pe.png",
+//       svg: "https://flagcdn.com/pe.svg",
+//     },
+//     coatOfArms: {
+//       png: "https://mainfacts.com/media/images/coats_of_arms/pe.png",
+//       svg: "https://mainfacts.com/media/images/coats_of_arms/pe.svg",
+//     },
+//     startOfWeek: "monday",
+//     capitalInfo: { latlng: [-12.05, -77.05] },
+//     postalCode: { format: "#####", regex: "^(\\d{5})$" },
+//   },
+// ];

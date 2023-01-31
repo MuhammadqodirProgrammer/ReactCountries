@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Card } from "../../components/Card/Card";
 import { Loading } from "../../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 export const CountryOne = () => {
@@ -52,7 +51,7 @@ export const CountryOne = () => {
   return (
     <>
       <div className="container">
-        <button className="btn btn-danger" onClick={() => navigate(-1)}>
+        <button className="btn btn-danger mt-3" onClick={() => navigate(-1)}>
           Back
         </button>
 
@@ -62,11 +61,11 @@ export const CountryOne = () => {
           <ul className="row gy-4 justify-content-center list-unstyled mt-4">
             {country.data.map((item) => (
                 <li className="col-md-3 col-sm-4 col-10">
-      <div className="d-flex gap-2">
+      <div className=" card">
         <img
           src={item.flags?.png}
           width="100%"
-          height="250px"
+          height="150px"
           className="card-img-top"
           alt="img"
         />
@@ -77,6 +76,7 @@ export const CountryOne = () => {
           <p className="card-text">Population:{item.population} </p>
           <p className="card-text">Region:{item.region} </p>
           <p className="card-text">Capital:{item?.capital} </p>
+          <p className="card-text">Subregion:{item?.subregion} </p>
       
         </div>
       </div>
