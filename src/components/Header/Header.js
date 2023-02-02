@@ -14,11 +14,11 @@ function Header() {
     return(
         <header className={`header ${theme}` } key={theme} >
         <h1>{lang[til].header.logo} </h1>
-        <select 
+        <select defaultValue={til}
         onChange={(evt) => setLang(evt.target.value)}
          >
-          <option value="uz"> UZ</option>
           <option value="en"> EN</option>
+          <option value="uz"> UZ</option>
         </select>
         <button onClick={()=> setTheme(theme === "dark" ? "light" : "dark") } className='mode'> 
       <img className='mode-img' src={mode} alt="mode" ></img>
