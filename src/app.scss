@@ -10,7 +10,14 @@ margin-bottom: 30px;
 .form-select ,.form-control{
     width: 300px !important;
 }
-
+.card{
+    width: 300px;
+}
+@media screen and (max-width:1200px) {
+    .card{
+        width: 280px;
+    }
+}
 @media screen and (max-width:768px) {
    .form{
     justify-content: center;
@@ -18,6 +25,9 @@ margin-bottom: 30px;
    .form-select ,.form-control{
     margin-top: 20px;
     width: 90% !important;
+}
+.card{
+    width: 280px;
 }
 }
 // .todo_text{

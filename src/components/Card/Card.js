@@ -3,11 +3,12 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 export const Card = ({ obj }) => {
+
   const btnRef = useRef();
   const TitleRef = useRef();
 
   return (
-    <li className="col-md-3 col-sm-4 col-10">
+    <li className="">
       <div className="card">
         <img
           src={obj.flags?.png}

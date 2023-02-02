@@ -21,8 +21,12 @@
     height: 30px;
 }
 
-.dark_mode{
-    background-color: black;
-    color: white;
+.dark{
+    background-color: #222;
+    color: gray;
     
+}
+.light{
+    background-color: rgb(0, 238, 255);
+    color: black;
 }

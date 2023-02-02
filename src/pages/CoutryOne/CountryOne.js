@@ -8,7 +8,6 @@ export const CountryOne = () => {
   const { name } = useParams();
   const navigate = useNavigate();
 
-  console.log(navigate);
 
   let [country, setCountry] = useState({
     isLoading: false,
@@ -60,7 +59,7 @@ export const CountryOne = () => {
         {country.data.length ? (
           <ul className="row gy-4 justify-content-center list-unstyled mt-4">
             {country.data.map((item) => (
-                <li className="col-md-3 col-sm-4 col-10">
+                <li key={name} className="col-md-3 col-sm-4 col-10">
       <div className=" card">
         <img
           src={item.flags?.png}

@@ -94,7 +94,7 @@ export const Countryes = ()=>{
       {country.isLoading ? (<Loading />) : ""}
       {country.isError ? <h1>{country.isError} </h1> : ""}
       {country.data.length ? (
-        <ul className="row gy-4 justify-content-center list-unstyled mt-4">
+        <ul className=" gy-4 d-flex flex-wrap gap-5 justify-content-center list-unstyled mt-4">
           {country.data.map((item) => (
             <Card key={item.name.common} obj={item} />
           ))}{" "}
