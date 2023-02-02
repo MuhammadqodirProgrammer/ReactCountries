@@ -1,6 +1,6 @@
 .header{
     /* background-color: orangered; */
-    padding: 15px 10px;
+    padding: 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +27,6 @@
     
 }
 .light{
-    background-color: rgb(0, 238, 255);
+    background-color: #fff;
     color: black;
 }

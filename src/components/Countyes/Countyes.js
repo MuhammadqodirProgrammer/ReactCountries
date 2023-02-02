@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import {Card} from "../Card/Card";
 import { Loading } from "../Loading/Loading";
-
+import { lang } from '../../lang/lang';
+import { LangContext } from '../../context/LangContext';
+import { useContext } from "react";
 export const Countryes = ()=>{
+
+  const {lang : til } = useContext(LangContext)
+  
     const SelectVal = useRef();
     const elChangeInput = useRef();
   
@@ -78,12 +83,12 @@ export const Countryes = ()=>{
 <form className="form  gx-4">
         <input className="form-control"
           type="Search"
-          placeholder="Search.."
+          placeholder={lang[til].form.placholder}
           onChange={handleChange}
           ref={elChangeInput}
         ></input>
         <select onChange={handleSelect} ref={SelectVal} className="form-select">
-          <option disabled>Filter by Region</option>
+          <option disabled selected>{lang[til].form.filter} </option>
           <option value="Africa">Africa</option>
           <option value="America">America</option>
           <option value="Asia">Asia</option>

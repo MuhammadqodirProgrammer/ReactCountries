@@ -8,7 +8,6 @@ export const CountryOne = () => {
   const { name } = useParams();
   const navigate = useNavigate();
 
-
   let [country, setCountry] = useState({
     isLoading: false,
     data: [],
@@ -57,34 +56,61 @@ export const CountryOne = () => {
         {country.isLoading ? <Loading /> : ""}
         {country.isError ? <h1>{country.isError} </h1> : ""}
         {country.data.length ? (
-          <ul className="row gy-4 justify-content-center list-unstyled mt-4">
+          <div className=" justify-content-center  mt-2">
             {country.data.map((item) => (
-                <li key={name} className="col-md-3 col-sm-4 col-10">
-      <div className=" card">
-        <img
-          src={item.flags?.png}
-          width="100%"
-          height="150px"
-          className="card-img-top"
-          alt="img"
-        />
-        <div className="card-body">
-          <h5 className="card-title" >
-            {item.name.common}
-          </h5>
-          <p className="card-text">Population:{item.population} </p>
-          <p className="card-text">Region:{item.region} </p>
-          <p className="card-text">Capital:{item?.capital} </p>
-          <p className="card-text">Subregion:{item?.subregion} </p>
-      
-        </div>
-      </div>
-    </li>
+              <div className=" d-flex align-items-center justify-content-center gap-3  flex-wrap flex-md-nowrap pb-4">
+                  <img
+                    src={item.flags?.png}
+                    className="card-img-one"
+                    alt="img"
+                  />
+                  <div className="d-flex flex-wrap flex-md-nowrap">
+                    <div className="card-body">
+                      <h2 className="card-title">{item.name.common}</h2>
+                      <p className="card-text">
+                        {" "}
+                        <b> Population:</b> {item.population}{" "}
+                      </p>
+                      <p className="card-text">
+                        <b> Region:</b> {item.region}{" "}
+                      </p>
+                      <p className="card-text">
+                        <b> Capital:</b> {item?.capital}{" "}
+                      </p>
+                      <p className="card-text">
+                        {" "}
+                        <b>Subregion:</b> {item?.subregion}{" "}
+                      </p>
+                    </div>
+                    <ul className="list-unstyled m-0 mt-md-0 mt-sm-0 mt-3">
+                      <li>
+                        <p className="fw-regular">
+                          Top Level Domain:{" "}
+                          <span className="fw-light">{item.name?.common}</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="fw-regular">
+                          Currencies:{" "}
+                          <span className="fw-light"> {item.name?.common}</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="fw-regular">
+                          Languages:{" "}
+                          <span className="fw-light">{item.name?.common}</span>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
             ))}{" "}
-          </ul>
+          </div>
         ) : (
           ""
         )}
+
+ 
       </div>
     </>
   );

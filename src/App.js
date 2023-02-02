@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import { Error } from "./pages/Error/Error";
 import { CountryOne } from "./pages/CoutryOne/CountryOne";
 import { useContext } from "react";
-import { ThemeContext } from "./context/Theme/themeContext";
+import { ThemeContext } from "./context/themeContext";
 
 function App() {
   const {theme } = useContext(ThemeContext)
